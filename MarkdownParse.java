@@ -16,6 +16,9 @@ public class MarkdownParse {
             } else if (markdown.charAt(closeParen) == ')') {
                 openParenCount--;
             }
+            if(markdown.indexOf(')', closeParen) == -1){
+                return -1;
+            }
             closeParen++;
         }
         return closeParen - 1;
